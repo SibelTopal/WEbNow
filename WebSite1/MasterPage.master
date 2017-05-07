@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 743px;
+            height: 346px;
+        }
+        .auto-style2 {
+            height: 53px;
+        }
+        .auto-style14{
+           background-color: #b200ff
+        }
+    </style>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body bgcolor=" #b200ff">
+    <form id="form1" runat="server">
+    <div>
+    </div>
+    <div>
+        <h1 style="color: #FF3399">Електронна книжарница</h1>
+        <p style="color: #FF3399">
+            <img alt="" class="auto-style1" src="snimki/25.jpg" /></p>
+        <p style="color: #FF3399">
+            <asp:ImageButton ID="imgbtnEn" runat="server" Height="45px" ImageUrl="~/snimki/En-zname.jpg" meta:resourcekey="imgbtnEnResource1" OnClick="imgbtnEn_Click" Width="43px" />
+&nbsp;
+            <asp:ImageButton ID="imgbtnBg" runat="server" Height="44px" ImageUrl="~/snimki/bg-zname.jpg" meta:resourcekey="imgbtnBgResource1" OnClick="imgbtnBg_Click" Width="51px" />
+        </p>
+        <p style="color: #FF3399">
+            &nbsp;</p>
+    </div>
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" BackColor="#FF3399" meta:resourcekey="SiteMapPath1Resource1">
+        </asp:SiteMapPath>
+        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" BackColor="#FF3399" Orientation="Horizontal" ForeColor="Black" RenderingMode="Table" OnMenuItemClick="Menu1_MenuItemClick" meta:resourcekey="Menu1Resource1">
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+        <br />
+        <br />
+        <table style="width:100%;">
+            <tr>
+                <td class="auto-style2">
+                    &nbsp;</td>
+                <td class="auto-style2"></td>
+                <td class="auto-style2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource1" />
+                    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XMLFile2.xml"></asp:XmlDataSource>
+                    <marquee direction="left"> 
+                    <asp:Label ID="lblDvijeshtese" runat=server Text="Добре дошли в Електронна книжарница Sindy Kupars" ></asp:Label>
+                    </marquee>
+                        <br />
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+      
+        
+        </asp:ContentPlaceHolder></td>
+                <td colspan="2">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <p>
+                &nbsp;</p>
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>
